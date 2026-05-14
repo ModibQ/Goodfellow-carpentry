@@ -19,7 +19,7 @@ export function Footer() {
             <Link href="/" className="flex items-center cursor-pointer">
               <img
                 src={logoSrc}
-                alt="Goodfellow & Sons Carpentry"
+                alt="Goodfellow & Sons Construction"
                 className="h-16 w-auto brightness-0 invert"
               />
             </Link>
@@ -69,7 +69,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
-          <p>&copy; {new Date().getFullYear()} Goodfellow & Sons Carpentry. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Goodfellow & Sons Construction. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

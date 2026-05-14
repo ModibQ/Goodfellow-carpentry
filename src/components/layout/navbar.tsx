@@ -37,7 +37,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center cursor-pointer">
             <img
               src={logoSrc}
-              alt="Goodfellow & Sons Carpentry"
+              alt="Goodfellow & Sons Construction"
               className={`h-28 w-auto transition-all duration-300 ${isScrolled ? "" : "[filter:drop-shadow(0_1px_6px_rgba(255,255,255,0.9))_drop-shadow(0_0_20px_rgba(255,255,255,0.4))]"}`}
             />
           </Link>
