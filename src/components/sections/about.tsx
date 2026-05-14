@@ -1,5 +1,6 @@
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { CheckCircle2 } from "lucide-react";
+import { IMAGES } from "@/images";
 
 export function About() {
   const contentRef = useScrollReveal();
@@ -9,12 +10,12 @@ export function About() {
     <section id="about" className="py-24 bg-foreground text-background relative clip-diagonal -mt-[3vw] pt-[6vw] pb-[6vw] clip-diagonal-reverse-bottom">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           <div ref={imageRef} className="reveal-on-scroll order-2 lg:order-1 relative">
             <div className="relative rounded-lg overflow-hidden aspect-square border-8 border-background/10">
-              <img 
-                src="/images/about-woodshop.png" 
-                alt="Traditional woodworking shop with tools and sawdust" 
+              <img
+                src={IMAGES.about}
+                alt="Traditional woodworking shop with tools and sawdust"
                 className="w-full h-full object-cover grayscale-[20%]"
               />
               <div className="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
@@ -28,10 +29,10 @@ export function About() {
               <h2 className="text-primary font-medium tracking-wider uppercase text-sm mb-3">Our Story</h2>
               <h3 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Real Craftsmanship. <br/>Real People.</h3>
             </div>
-            
+
             <div className="space-y-4 text-lg text-white/80 font-light leading-relaxed">
               <p>
-                Goodfellow & Sons isn't a corporate franchise. We are a family of carpenters who learned the trade the old-fashioned way—by doing the work, respecting the materials, and treating every home as if it were our own.
+                Goodfellow & Sons isn't a corporate franchise. We are a family of builders who learned the trade the old-fashioned way—by doing the work, respecting the materials, and treating every home as if it were our own.
               </p>
               <p>
                 For over three decades, we've been serving the MetroWest community. The majority of our business comes from the best kind of marketing there is: a neighbor telling a neighbor about the good work we did.

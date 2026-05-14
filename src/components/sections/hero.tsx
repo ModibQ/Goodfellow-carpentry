@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { IMAGES } from "@/images";
 
 export function Hero() {
   const scrollToContact = () => {
@@ -13,9 +14,9 @@ export function Hero() {
     <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden clip-diagonal pb-[3vw]">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/images/hero-bg.png" 
-          alt="Custom wooden deck attached to a New England home" 
+        <img
+          src={IMAGES.hero}
+          alt="Custom wooden deck attached to a New England home"
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-foreground/60 backdrop-blur-[2px]" />
@@ -27,11 +28,11 @@ export function Hero() {
             Craftsmanship <br className="hidden md:block" />
             <span className="text-primary italic">that lasts</span> generations.
           </h1>
-          
+
           <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed font-light">
-            We are MetroWest’s trusted family carpenters. From custom decks to whole-home remodels, we build with integrity, precision, and a handshake that means something.
+            We are MetroWest's trusted family builders. From custom decks to whole-home remodels, we build with integrity, precision, and a handshake that means something.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Button size="lg" onClick={scrollToContact} className="text-base h-14 px-8 cursor-pointer">
               Get a Free Estimate

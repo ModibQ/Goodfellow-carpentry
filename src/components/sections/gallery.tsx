@@ -1,13 +1,5 @@
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-
-const images = [
-  { src: "/images/service-decks.png", alt: "Custom mahogany deck", span: "md:col-span-2 md:row-span-2" },
-  { src: "/images/gallery-1.png", alt: "Finished custom stairs exterior", span: "col-span-1" },
-  { src: "/images/gallery-3.png", alt: "Interior custom trim and molding", span: "col-span-1" },
-  { src: "/images/service-remodel.png", alt: "Whole home remodel interior", span: "md:col-span-2" },
-  { src: "/images/gallery-2.png", alt: "House framing progress", span: "col-span-1" },
-  { src: "/images/service-siding.png", alt: "Flawless exterior siding", span: "col-span-1" },
-];
+import { IMAGES } from "@/images";
 
 export function Gallery() {
   const headerRef = useScrollReveal();
@@ -24,19 +16,19 @@ export function Gallery() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px]">
-          {images.map((img, i) => {
+          {IMAGES.gallery.map((img, i) => {
             const imgRef = useScrollReveal({ threshold: 0.1 });
             return (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 ref={imgRef}
                 className={`reveal-on-scroll group relative overflow-hidden rounded-lg bg-muted ${img.span}`}
                 style={{ transitionDelay: `${(i % 3) * 100}ms` }}
               >
                 <div className="absolute inset-0 bg-foreground/20 group-hover:bg-transparent transition-colors z-10 duration-500"></div>
-                <img 
-                  src={img.src} 
-                  alt={img.alt} 
+                <img
+                  src={img.src}
+                  alt={img.alt}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
