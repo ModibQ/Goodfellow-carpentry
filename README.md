@@ -39,7 +39,3 @@ The site is deployed via **Cloudflare Pages** using the deploy build config:
 ```bash
 npm run build:deploy
 ```
-
-## Contact
-
-Built by Modib — modibq@gmail.com
