@@ -1,5 +1,4 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { SITE_CONFIG } from "@/config";
 import { Button } from "@/components/ui/button";
@@ -9,11 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, CheckCircle, AlertCircle } from "lucide-react";
 
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-const emailjsConfigured = SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY;
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 
 export function Contact() {
   const contentRef = useScrollReveal();
@@ -29,31 +24,39 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!emailjsConfigured) {
-      setStatus("error");
-      return;
-    }
     setStatus("sending");
+
     try {
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          from_name: `${firstName} ${lastName}`,
-          from_email: email,
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: `${firstName} ${lastName}`,
+          email,
           phone: phone || "Not provided",
           service_type: service,
           message,
-        },
-        { publicKey: PUBLIC_KEY }
-      );
-      setStatus("success");
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPhone("");
-      setService("");
-      setMessage("");
+          subject: `New Project Inquiry from ${firstName} ${lastName}`,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPhone("");
+        setService("");
+        setMessage("");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
@@ -126,14 +129,7 @@ export function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {!emailjsConfigured && (
-                    <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 text-amber-800 rounded-lg p-4 text-sm">
-                      <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
-                      <p>Email sending is not configured yet. Add your EmailJS credentials to enable this form.</p>
-                    </div>
-                  )}
-
-                  {status === "error" && emailjsConfigured && (
+                  {status === "error" && (
                     <div className="flex items-start gap-3 bg-red-50 border border-red-200 text-red-800 rounded-lg p-4 text-sm">
                       <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
                       <p>Something went wrong. Please try again or call us directly.</p>
