@@ -1,6 +1,6 @@
 import { MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "wouter";
-import logoSrc from "@/assets/logo.png";
+import logoSrc from "@/assets/logo_original.jpg";
 import { SITE_CONFIG } from "@/config";
 
 export function Footer() {
