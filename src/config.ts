@@ -28,19 +28,19 @@ export const SITE_CONFIG = {
   // ----------------------------------------------------------
   testimonials: [
     {
-      quote: "Paste a real customer review here.",
-      name: "Customer Name",
-      location: "Town, MA",
+      quote: "Tim and his crew built us a beautiful deck last summer. From the first estimate to the final nail, everything was professional and on time. Couldn't be happier with the result.",
+      name: "Modib",
+      location: "Wayland, MA",
     },
     {
-      quote: "Paste a real customer review here.",
-      name: "Customer Name",
-      location: "Town, MA",
+      quote: "We hired Goodfellow & Sons for a full kitchen remodel and they knocked it out of the park. Tim was on site every single day and kept us in the loop the whole time. Highly recommend.",
+      name: "Jason",
+      location: "Framingham, MA",
     },
     {
-      quote: "Paste a real customer review here.",
-      name: "Customer Name",
-      location: "Town, MA",
+      quote: "Best contractor we've ever worked with. They re-sided our entire house and it looks incredible. Fair pricing, clean worksite, and the quality speaks for itself.",
+      name: "Mike",
+      location: "Natick, MA",
     },
   ],
 
