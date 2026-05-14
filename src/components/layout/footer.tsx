@@ -20,7 +20,7 @@ export function Footer() {
               <img
                 src={logoSrc}
                 alt="Goodfellow & Sons Construction"
-                className="h-16 w-auto brightness-0 invert"
+                className="h-16 w-auto"
               />
             </Link>
             <p className="text-muted text-sm leading-relaxed max-w-xs opacity-80">
