@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoSrc from "@/assets/logo-original.jpg"
+import logoSrc from "@/assets/logo_original.jpg"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
